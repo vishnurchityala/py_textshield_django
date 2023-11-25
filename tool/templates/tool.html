@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block tool %}
+<!-- Tool box of the webpage -->
+    <section class="container-fluid tool-box" id="toolBox">
+        <!-- tool box logo -->
+        <div class="ms-auto me-auto text-center mt-5" style="width:200px;">
+            <img src="img/icons8-code-90-navyblue.png" width="55px" alt="">
+        </div>
+        <!-- tool box title -->
+        <h1 class="text-dark-blue section-title text-center">Encryptor/Decryptor</h1>
+        <!-- Toolbox -->
+        <div class="container-md ms-auto me-auto tool-box-container row mt-5">
+            <form class="col-md-6" method="post">
+                {% csrf_token %}
+<!--                {{ encryptor.as_p }}-->
+<!--                <button class="btn btn-neon-green" type="submit">submit</button>-->
+<!--                <p>{{ encrypted_text }}</p>-->
+                <p class="tool-box-info text-dark-blue"><label for="{{ encryptor.plain_text.id_for_label }}">Encryptor</label></p>
+                <textarea class="form-control tool-text-box text-dark-blue"  name="{{ encryptor.plain_text.name }}" id="{{ encryptor.plain_text.id_for_label }}"  placeholder= " Your plain or Decrypted text will be displayed here">{% if encryptor.plain_text.value %} {{ encryptor.plain_text.value }} {% endif %}</textarea>
+
+                <div class="mt-3 row">
+                    <div class="col-8">
+                        <div class="input-group">
+                            <span class="input-group-text text-dark-blue" >Key</span>
+                            <div class="form-floating">
+
+                              <input type="text" class="form-control key-input" placeholder="Username" id="{{ encryptor.encryption_key.id_for_label }}" name="{{ encryptor.encryption_key.name }}" {% if encryptor.encryption_key.value %} value="{{ encryptor.encryption_key.value }}" {% endif %} >
+                              <label  for="{{ encryptor.encryption_key.id_for_label }}" style="text-dark-blue">Encryption key</label>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+
+                        <button class="btn btn-neon-green tool-button" type="submit">Encrypt</button>
+
+                    </div>
+                </div>
+
+                <p class="tool-box-info text-dark-blue" style="text-decoration: none;">Encrypted Text</p>
+                <textarea class="form-control tool-text-box mt-3 text-dark-blue" placeholder=" Your Encrypted or Cipher text will be displayed here">{{ encrypted_text }}</textarea>
+            </form>
+            <form class="col-md-6" method="post">
+                {% csrf_token %}
+<!--                {{ decryptor.as_p }}-->
+<!--                <button class="btn btn-neon-green" type="submit">submit</button>-->
+<!--                <p>{{ encrypted_text }}</p>-->
+                <p class="tool-box-info text-dark-blue"><label for="{{ decryptor.cipher_text.id_for_label }}">Decryptor</label></p>
+                <textarea class="form-control tool-text-box text-dark-blue"  name="{{ decryptor.cipher_text.name }}" id="{{ decryptor.cipher_text.id_for_label }}"  placeholder= " Your Cipher or Encrypted text will be displayed here">{% if decryptor.cipher_text.value %} {{ decryptor.cipher_text.value }} {% endif %}</textarea>
+
+                <div class="mt-3 row">
+                    <div class="col-8">
+                        <div class="input-group">
+                            <span class="input-group-text text-dark-blue" >Key</span>
+                            <div class="form-floating">
+
+                              <input type="text" class="form-control key-input" placeholder="Username" id="{{ decryptor.decryption_key.id_for_label }}" name="{{ decryptor.decryption_key.name }}" {% if decryptor.decryption_key.value %} value="{{ decryptor.decryption_key.value }}" {% endif %} >
+                              <label  for="{{ decryptor.decryption_key.id_for_label }}" style="text-dark-blue">Decryption key</label>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+
+                        <button class="btn btn-neon-green tool-button" onclick="dc()">Decrypt</button>
+
+                    </div>
+                </div>
+
+                <p class="tool-box-info text-dark-blue" style="text-decoration:none;">Decrypted Text</p>
+                <p id="text">f</p>
+                <textarea class="form-control tool-text-box mt-3 text-dark-blue" placeholder=" Your Decrypted or Plain text will be displayed here">{{ decrypted_text }}</textarea>
+            </form>
+
+        </div>
+    </section>
+    <script>
+        function dc() {
+            document.getElementById("text").innerText = decrypted_text;
+        }
+    </script>
+{% endblock %}

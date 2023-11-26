@@ -15,4 +15,16 @@ PyTextShield successfully encrypts and decrypts the data by taking input from th
 
 This project gave a kick start to learn Django framework for web-development.
 
+## Guide to setup
 
+• Create a folder for Django project in your machine.
+
+• Download the zip file of this project and extract in the created folder.
+
+• Open the terminal and change current working directory to the created folder.
+
+• route to the folder "py_textshield_django-main".
+
+• run the command "python manage.py runserver".
+
+• The Django project is hosted in the shown localhost URL.

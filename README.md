@@ -11,8 +11,8 @@ PyTextShield is a free online text encryption tool that uses the powerful Advanc
 
 ## Project Outcomes
 
-PyTextShield successfully encrypts and decrypts the data by taking input from the webpage and toolbox of the webpage. Project has been tried and tested on the developmental server of the computer it is programmed on.
+PyTextShield successfully encrypts and decrypts the data by taking input from the toolbox of the webpage.
 
-The webpage runs smoothly without any errors. It encrypts and decrypts the data, if any error is found in form submission it displays a message to the user about the error that has occurred.
+This project gave a kick start to learn Django framework for web-development.
 
 

@@ -1,4 +1,4 @@
-# py_textshield_django
+# Py_TextShield
 PyTextShield is a free online text encryption tool that uses the powerful Advanced Encryption Standard (AES) algorithm in Electronic Codebook (ECB) mode. Constructed as a Django based web application, PyTextShield features an adaptable toolbox that contains two tools: a decryptor and an encryptor. Using the AES algorithm in ECB mode, the encryptor encrypts data securely by accepting plain text and a secret key as input. On the other hand, the decryptor goes in the other direction, using the ciphertext and a key as input to carefully decode (decrypt) the data. PyTextShield is a dependable option for protecting sensitive data because it uses AES, which adds an additional degree of protection.
 
 ## Objectives
